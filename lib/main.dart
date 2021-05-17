@@ -31,6 +31,7 @@ class _HelloState extends State<HelloStateful>{
   }
   Widget _crea_botones(){
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
       children: <Widget>[
         SizedBox(width: 50,),
         FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_zero),
