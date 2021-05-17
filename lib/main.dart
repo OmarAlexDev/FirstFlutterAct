@@ -32,7 +32,10 @@ class _HelloState extends State<HelloStateful>{
     return Row(
       children: <Widget>[
         SizedBox(width: 30,),
-        FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_zero)
+        FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_zero),
+        FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_plus),
+        FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_minus),
+        FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_reset)
         //botón para incrementar de 1 en 1
         //botón para decrementar de 1 en 1
         //botón para incremento aleatorio
@@ -43,6 +46,21 @@ class _HelloState extends State<HelloStateful>{
   void funcion_zero(){
     setState(() {
       variable_estado=0;
+    });
+  }
+  void funcion_plus(){
+    setState(() {
+      variable_estado=variable_estado+1;
+    });
+  }
+  void funcion_minus(){
+    setState(() {
+      variable_estado=variable_estado-1;
+    });
+  }
+  void funcion_reset(){
+    setState(() {
+      variable_estado=-1;
     });
   }
 }
