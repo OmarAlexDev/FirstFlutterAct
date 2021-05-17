@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'dart:math';
 
 class HelloStateful extends StatefulWidget{
   @override
@@ -31,10 +32,11 @@ class _HelloState extends State<HelloStateful>{
   Widget _crea_botones(){
     return Row(
       children: <Widget>[
-        SizedBox(width: 30,),
+        SizedBox(width: 50,),
         FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_zero),
         FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_plus),
         FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_minus),
+        FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_random),
         FloatingActionButton(child: Icon(Icons.exposure_zero_rounded), onPressed: funcion_reset)
         //botón para incrementar de 1 en 1
         //botón para decrementar de 1 en 1
@@ -61,6 +63,13 @@ class _HelloState extends State<HelloStateful>{
   void funcion_reset(){
     setState(() {
       variable_estado=-1;
+    });
+  }
+  void funcion_random(){
+    Random random = new Random();
+    int randomNumber = random.nextInt(10);
+    setState(() {
+      variable_estado=variable_estado+randomNumber;
     });
   }
 }
